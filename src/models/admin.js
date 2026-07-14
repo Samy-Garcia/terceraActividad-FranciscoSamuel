@@ -1,12 +1,12 @@
 import { Schema, model } from "mongoose"
 
 const AdminSchema = Schema({
-    name: {Type: String},
-    email: {Type: String},
-    password: {Type: String},
-    isVerify: {Type: Boolean},
-    loginAttempts: {Type: Number},
-    timeOut: {Type: Date},
+    name: { type: String },
+    email: {type: String},
+    password: {type: String},
+    isVerify: {type: Boolean},
+    loginAttempts: {type: Number},
+    timeOut: {type: Date},
 },{
     timestamps: true,
     strict: false

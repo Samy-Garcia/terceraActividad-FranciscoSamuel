@@ -57,7 +57,7 @@ loginAdminController.login = async (req, res) => {
         //generar el token
         const token = jsonwebtoken.sign(
             //1-¿que vamos a guardar en el token?
-            {id: AdminFound._id, userType: "customer"},
+            {id: AdminFound._id, userType: "admin"},
             //2- secret key
             config.JWT.secret,
             //3- tiempo de expiracion del token

@@ -3,6 +3,9 @@ import cors from "cors"
 import express from "express";
 import customerRoute from "./src/routes/registerCustomer.js";
 import adminRoute from "./src/routes/registerAdmin.js";
+import loginAdminRoute from "./src/routes/loginAdmin.js";
+import loginCustomerRoute from "./src/routes/loginCustomer.js";
+import wompiRoute from "./src/routes/wompi.js"
 
 const app = express();
 
@@ -18,5 +21,9 @@ app.use(express.json());
 
 app.use("/api/registerCustomer", customerRoute);
 app.use("/api/registerAdmin", adminRoute);
+app.use("/api/loginAdmin", loginAdminRoute);
+app.use("/api/loginCustomer", loginCustomerRoute);
+app.use("/api/wompi". wompiRoute);
+
 
 export default app

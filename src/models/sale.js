@@ -1,14 +1,14 @@
 import mongoose, { Schema, model } from "mongoose"
 
 const saleSchema = Schema({
-    customerId: {Type: mongoose.Types.ObjectId,
+    customerId: {type: mongoose.Types.ObjectId,
         ref: "Customer"
     },
-    quantity: {Type: Number},
-    purchaseDate: {Type: Date},
-    total: {Type: Number},
-    paymentStatus: {Type: Boolean},
-    transactionId: {Type: String},
+    quantity: {type: Number},
+    purchaseDate: {type: Date},
+    total: {type: Number},
+    paymentStatus: {type: Boolean},
+    transactionId: {type: String},
 },{
     timestamps: true,
     strict: false
