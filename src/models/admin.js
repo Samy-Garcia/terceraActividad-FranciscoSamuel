@@ -4,7 +4,7 @@ const AdminSchema = Schema({
     name: {Type: String},
     email: {Type: String},
     password: {Type: String},
-    isVerify: {Type: String},
+    isVerify: {Type: Boolean},
     loginAttempts: {Type: Number},
     timeOut: {Type: Date},
 },{

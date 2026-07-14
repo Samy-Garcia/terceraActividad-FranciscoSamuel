@@ -1,6 +1,6 @@
 import adminModel from "../models/admin.js";
 import nodemailer from "nodemailer";
-import crypto, { randomBytes } from "crypto";
+import crypto from "crypto";
 import jsonwebtoken from "jsonwebtoken";
 import bcryptsj from "bcryptjs"
 
@@ -50,7 +50,7 @@ registerAdminController.register = async (req, res) =>{
         auth: {
             user: config.email.user_email,
             pass: config.email.user_password,
-        }
+        } 
     });
 
     //quie y como lo recibe
