@@ -1,4 +1,4 @@
-import customerModel from "../models/customer.js";
+import adminModel from "../models/admin.js";
 import nodemailer from "nodemailer";
 import crypto, { randomBytes } from "crypto";
 import jsonwebtoken from "jsonwebtoken";
@@ -6,15 +6,15 @@ import bcryptsj from "bcryptjs"
 
 import { config } from "../../config.js";
 
-const registerCustomerController = {}
+const registerAdminController = {}
 
-registerCustomerController.register = async (req, res) =>{
+registerAdminController.register = async (req, res) =>{
     try {
         //solicitar datos
         let {name, email, password, isVerify, loginAttemps, timeOut} = req.body
 
-        const existCustomer = await customerModel.findOne({ email });
-        if (existCustomer) {
+        const existAdmin = await adminModel.findOne({ email });
+        if (existAdmin) {
             return res.status(400).json({message: "cliente ya exite"})
         }
 
@@ -76,7 +76,7 @@ registerCustomerController.register = async (req, res) =>{
     }
 }
 
-registerCustomerController.verifyCode = async (req, res) => {
+registerAdminController.verifyCode = async (req, res) => {
     try {
         const { verifyCodeRequest } = req.body;
 
@@ -98,17 +98,17 @@ registerCustomerController.verifyCode = async (req, res) => {
             return res.status(400).json({message: "invalid code"})
         }
 
-        const newCustomer = new customerModel({
+        const newAdmin = new adminModel({
             name,
             email,
             password,
             isVerify: true
         })
-        await newCustomer.save();
+        await newAdmin.save();
         
         res.clearCookie("registrationCookie");
 
-        return res.status(200).json({message:"customer register succesfully"})
+        return res.status(200).json({message:"admin register succesfully"})
 
 
 
@@ -117,4 +117,4 @@ registerCustomerController.verifyCode = async (req, res) => {
         res.status(500).json({message: "internal server error"})
     }
 }
-export default registerCustomerController;
+export default registerAdminController;
