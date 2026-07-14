@@ -1,7 +1,7 @@
 import { Router } from "express";
-import saleController from "../controllers/saleController.js";
+import saleController from "../controller/saleController.js";
 
-import { validateAuthCookie } from "../middlewares/validateAuthCookie.js";
+import { validateAuthCookie } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
