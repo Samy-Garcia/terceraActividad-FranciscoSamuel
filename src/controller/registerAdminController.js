@@ -64,13 +64,13 @@ registerAdminController.register = async (req, res) =>{
     //enviar el correo
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log("error"+ error)
+            console.log("error "+ error)
             return res.status(500).json({message: "error send mail"})
         }
         return res.status(200).json({message:"email send succesfully"})
     })
     } catch (error) {
-        console.log("error"+ error)
+        console.log("error "+ error)
         res.status(500).json({message: "internal server error"})
         
     }
