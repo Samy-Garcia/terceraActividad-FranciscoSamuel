@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://localhost:27017/littlecaesarDB")
+mongoose.connect("mongodb://Samuel:akamegakill@ac-q57xd6f-shard-00-00.7impljn.mongodb.net:27017,ac-q57xd6f-shard-00-01.7impljn.mongodb.net:27017,ac-q57xd6f-shard-00-02.7impljn.mongodb.net:27017/todoTiket?ssl=true&replicaSet=atlas-hfbe06-shard-0&authSource=admin&appName=ClusterPersonal")
 
 //comprobamos la conexion a la base de datos
 

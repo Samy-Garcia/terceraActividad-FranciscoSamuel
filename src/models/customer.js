@@ -5,7 +5,7 @@ const customerSchema = Schema({
     email: {Type: String},
     password: {Type: String},
     isVerify: {Type: String},
-    loginAttempts: {Type: Number},
+    loginAttemps: {Type: Number},
     timeOut: {Type: Date},
 },{
     timestamps: true,
