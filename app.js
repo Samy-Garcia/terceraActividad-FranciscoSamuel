@@ -7,6 +7,7 @@ import loginAdminRoute from "./src/routes/loginAdmin.js";
 import loginCustomerRoute from "./src/routes/loginCustomer.js";
 import wompiRoute from "./src/routes/wompi.js";
 import saleRoutes from "./src/routes/sale.js";
+import logoutRoute from "./src/routes/logout.js"
 
 const app = express();
 
@@ -26,5 +27,6 @@ app.use("/api/loginAdmin", loginAdminRoute);
 app.use("/api/loginCustomer", loginCustomerRoute);
 app.use("/api/wompi", wompiRoute);
 app.use("/api/sales", saleRoutes);
+app.use("/api/logout", logoutRoute);
 
 export default app
